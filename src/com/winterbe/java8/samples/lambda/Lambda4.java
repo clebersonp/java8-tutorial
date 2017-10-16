@@ -14,7 +14,7 @@ public class Lambda4 {
 
         Lambda2.Converter<Integer, String> stringConverter =
                 (from) -> String.valueOf(from + num);
-
+                
         String convert = stringConverter.convert(2);
         System.out.println(convert);    // 3
 

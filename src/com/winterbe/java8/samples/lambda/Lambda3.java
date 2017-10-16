@@ -78,7 +78,8 @@ public class Lambda3 {
         // Callables
 
         Callable<UUID> callable = UUID::randomUUID;
-        callable.call();
+        UUID call = callable.call();
+        System.out.println(call);
     }
 
 }

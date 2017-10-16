@@ -43,5 +43,31 @@ public class Lambda2 {
 
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Peter", "Parker");
+        System.out.println(person);
+        
+        // --------- com classe anonima
+        PersonFactory<Person> personFactory2 = new PersonFactory<Person>() {
+			@Override
+			public Person create(String firstName, String lastName) {
+				return new Person(firstName, lastName);
+			}
+        };
+        
+        Person cleberson = personFactory2.create("cleberson", "pauluci");
+        System.out.println(cleberson);
+        // ------- com classe anonima
+        
+        
+        // ------- com expressao lambda
+        PersonFactory<Person> personFactory3 = (String firstName, String lastName) -> new Person(firstName, lastName);
+        
+        Person bruna = personFactory3.create("bruna", "paola");
+        System.out.println(bruna);
+        // ------- com expressao lambda
+        
+        PersonFactory<Person> personFactory4 = (firstName, lastName) -> new Person(firstName, lastName);
+        
+        Person mike = personFactory4.create("mike", "two");
+        System.out.println(mike);
     }
 }
