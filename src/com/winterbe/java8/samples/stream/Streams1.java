@@ -1,8 +1,11 @@
 package com.winterbe.java8.samples.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 
 /**
  * @author Benjamin Winterberg
@@ -77,9 +80,11 @@ public class Streams1 {
 
         // counting
 
-        long startsWithB = stringCollection
+        System.out.println("Counting");
+        Predicate<String> predicate = (s) -> s.startsWith("b");
+		long startsWithB = stringCollection
                 .stream()
-                .filter((s) -> s.startsWith("b"))
+                .filter(predicate.and((s) -> s.endsWith("1")))
                 .count();
 
         System.out.println(startsWithB);    // 3

@@ -5,7 +5,7 @@ public class MethodReferenceExample1 {
 	public static void main(String[] args) {
 		
 		Thread t = new Thread(MethodReferenceExample1::printMessage); // MethodReferenceExcample1::printMessage === () -> printMessage()
-		t.run();
+		t.start();
 	}
 	
 	public static void printMessage() {
